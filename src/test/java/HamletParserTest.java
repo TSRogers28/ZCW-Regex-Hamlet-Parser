@@ -15,17 +15,47 @@ public class HamletParserTest {
 
     @Test
     public void testChangeHamletToLeon() {
+        String leon = hamletParser.changeHamletToLeon("Hamlet", "Leon");
+
+        int expected = hamletParser.findWord(hamletText , "Hamlet");
+        int actual = hamletParser.findWord(leon , "Hamlet");
+
+        System.out.println(leon);
+       // System.out.println(hamletText);
+
+
+
+        assertEquals(expected, actual);
     }
 
     @Test
     public void testChangeHoratioToTariq() {
+        String leon = hamletParser.changeHamletToLeon("Horatio", "Tariq");
+
+        int expected = hamletParser.findWord(hamletText , "Horatio");
+        int actual = hamletParser.findWord(leon , "Tariq");
+
+        System.out.println(leon);
+        // System.out.println(hamletText);
+
+
+
+        assertEquals(expected, actual);
     }
 
     @Test
     public void testFindHoratio() {
+        int expected = 158;
+        int actual = hamletParser.findWord(hamletText,"Horatio");
+
+        assertEquals(expected, actual);
     }
 
     @Test
     public void testFindHamlet() {
+        int expected = 472;
+        int actual = hamletParser.findWord(hamletText,"Hamlet");
+
+        assertEquals(expected, actual);
     }
 }
