@@ -38,15 +38,15 @@ public class HamletParser {
         return hamletData;
     }
 
-    public String changeHamletToLeon(String search, String replace){
-        Pattern patt = Pattern.compile("\\b" +search + "\\b", Pattern.CASE_INSENSITIVE);
+    public String changeWord(String search, String replace){
+        Pattern patt = Pattern.compile("^" +search + "", Pattern.CASE_INSENSITIVE);
         Matcher m = patt.matcher(hamletData);
         return m.replaceAll(replace);
     }
 
     public int findWord(CharSequence hamletData ,String search) {
         int count = 0;
-        Pattern patt = Pattern.compile("\\b" +search + "\\b", Pattern.CASE_INSENSITIVE);
+        Pattern patt = Pattern.compile("^" +search + "", Pattern.CASE_INSENSITIVE);
         Matcher m = patt.matcher(hamletData);
      while (m.find())
             count++;

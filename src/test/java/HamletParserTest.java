@@ -15,7 +15,7 @@ public class HamletParserTest {
 
     @Test
     public void testChangeHamletToLeon() {
-        String leon = hamletParser.changeHamletToLeon("Hamlet", "Leon");
+        String leon = hamletParser.changeWord("Hamlet", "Leon");
 
         int expected = hamletParser.findWord(hamletText , "Hamlet");
         int actual = hamletParser.findWord(leon , "Leon");
@@ -27,7 +27,7 @@ public class HamletParserTest {
 
     @Test
     public void testChangeHoratioToTariq() {
-        String leon = hamletParser.changeHamletToLeon("Horatio", "Tariq");
+        String leon = hamletParser.changeWord("Horatio", "Tariq");
 
         int expected = hamletParser.findWord(hamletText , "Horatio");
         int actual = hamletParser.findWord(leon , "Tariq");
