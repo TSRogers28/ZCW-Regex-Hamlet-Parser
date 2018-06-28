@@ -18,12 +18,9 @@ public class HamletParserTest {
         String leon = hamletParser.changeHamletToLeon("Hamlet", "Leon");
 
         int expected = hamletParser.findWord(hamletText , "Hamlet");
-        int actual = hamletParser.findWord(leon , "Hamlet");
+        int actual = hamletParser.findWord(leon , "Leon");
 
         System.out.println(leon);
-       // System.out.println(hamletText);
-
-
 
         assertEquals(expected, actual);
     }
@@ -36,9 +33,6 @@ public class HamletParserTest {
         int actual = hamletParser.findWord(leon , "Tariq");
 
         System.out.println(leon);
-        // System.out.println(hamletText);
-
-
 
         assertEquals(expected, actual);
     }
@@ -47,7 +41,6 @@ public class HamletParserTest {
     public void testFindHoratio() {
         int expected = 158;
         int actual = hamletParser.findWord(hamletText,"Horatio");
-
         assertEquals(expected, actual);
     }
 
@@ -55,7 +48,6 @@ public class HamletParserTest {
     public void testFindHamlet() {
         int expected = 472;
         int actual = hamletParser.findWord(hamletText,"Hamlet");
-
         assertEquals(expected, actual);
     }
 }
