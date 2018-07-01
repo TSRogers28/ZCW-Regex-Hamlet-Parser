@@ -39,14 +39,14 @@ public class HamletParser {
     }
 
     public String changeWord(String search, String replace){
-        Pattern patt = Pattern.compile("^" +search + "", Pattern.CASE_INSENSITIVE);
+        Pattern patt = Pattern.compile("\\b" +search + "\\b", Pattern.CASE_INSENSITIVE);
         Matcher m = patt.matcher(hamletData);
-        return m.replaceAll(replace);
+        return m.replaceAll("" + replace + "");
     }
 
-    public int findWord(CharSequence hamletData ,String search) {
+    public int findWord(String hamletData ,String search) {
         int count = 0;
-        Pattern patt = Pattern.compile("^" +search + "", Pattern.CASE_INSENSITIVE);
+        Pattern patt = Pattern.compile("\\b" +search + "\\b", Pattern.CASE_INSENSITIVE);
         Matcher m = patt.matcher(hamletData);
      while (m.find())
             count++;
