@@ -39,17 +39,26 @@ public class HamletParser {
     }
 
     public String changeWord(String search, String replace){
-        Pattern patt = Pattern.compile("\\b" +search + "\\b", Pattern.CASE_INSENSITIVE);
-        Matcher m = patt.matcher(hamletData);
+        String upperCaseS = search.toUpperCase();
+        String upperCaseR = replace.toUpperCase();
+        String lowerCaseSwapped = replaceWord(search, replace, hamletData);
+        return replaceWord(upperCaseS, upperCaseR, lowerCaseSwapped);
+    }
+
+    public String replaceWord(String search, String replace, String text){
+        Pattern patt = Pattern.compile("\\b" +search + "\\b");
+        Matcher m = patt.matcher(text);
         return m.replaceAll("" + replace + "");
     }
 
-    public int findWord(String hamletData ,String search) {
-        int count = 0;
-        Pattern patt = Pattern.compile("\\b" +search + "\\b", Pattern.CASE_INSENSITIVE);
+
+    public int findWord(String hamletData, String search) {
+        Pattern patt = Pattern.compile( search , Pattern.CASE_INSENSITIVE);
         Matcher m = patt.matcher(hamletData);
-     while (m.find())
-            count++;
+        int count = 0;
+     while (m.find()) {
+         count++;
+     }
      return count;
     }
 
